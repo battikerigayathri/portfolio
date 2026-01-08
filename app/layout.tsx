@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AOSInit } from "@/components/AOSInit";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,50 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen bg-[#030014] overflow-x-hidden`}
       >
-        {children}
+        <div className="fixed inset-0 -z-10">
+          {/* Gradient Blobs */}
+          <div className="absolute inset-0">
+            {/* Purple Top Left */}
+            <div
+              className="absolute top-0 -left-4 md:w-96 md:h-96 w-72 h-72 
+                bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] 
+                opacity-40 md:opacity-20 animate-blob"
+            />
+
+            {/* Cyan Top Right */}
+            <div
+              className="absolute top-0 -right-4 w-96 h-96 
+                bg-cyan-500 rounded-full mix-blend-multiply filter blur-[128px] 
+                opacity-40 md:opacity-20 hidden sm:block animate-blob animation-delay-2000"
+            />
+
+            {/* Blue Bottom Left */}
+            <div
+              className="absolute -bottom-8 left-[-40%] md:left-20 w-96 h-96 
+                bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] 
+                opacity-40 md:opacity-20 animate-blob animation-delay-4000"
+            />
+
+            {/* Blue Bottom Right */}
+            <div
+              className="absolute -bottom-10 right-20 w-96 h-96 
+                bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] 
+                opacity-20 md:opacity-10 hidden sm:block animate-blob animation-delay-1000"
+            />
+          </div>
+
+          {/* Grid Overlay */}
+          <div
+            className="absolute inset-0 
+            bg-[linear-gradient(to_right,#4f4f4f10_1px,transparent_1px),
+            linear-gradient(to_bottom,#4f4f4f10_1px,transparent_1px)]
+            bg-[size:24px_24px]"
+          />
+        </div>
+        <div className="relative z-10">{children}</div>
+        <AOSInit />
       </body>
     </html>
   );
