@@ -4,18 +4,18 @@ import React from "react";
 import StatCard from "./StatCard";
 import { Award, Code, FileText, Globe, Sparkles } from "lucide-react";
 
-
 const About = () => {
-
   const handleScrollToPortfolio = (tabIndex: number) => {
-    document.getElementById('Portfolio')?.scrollIntoView({ behavior: 'smooth' });
-    window.dispatchEvent(new CustomEvent('switchTab', { detail: tabIndex }));
+    document
+      .getElementById("portfolio")
+      ?.scrollIntoView({ behavior: "smooth" });
+    window.dispatchEvent(new CustomEvent("switchTab", { detail: tabIndex }));
   };
 
   return (
     <div
       className="py-20 text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%]"
-      id="About"
+      id="about"
     >
       {/* Heading */}
       <div className="text-center mb-16" data-aos="zoom-in-up">
@@ -40,17 +40,17 @@ const About = () => {
           </h2>
 
           <p className="text-gray-400 leading-relaxed text-justify">
-            Full Stack Web Developer with expertise in React JS, Next JS, Node JS,
-            Laravel, and Tailwind CSS. Skilled in building responsive, scalable,
-            and user-friendly web applications, developing and integrating
-            RESTful APIs, and optimizing performance.
+            Full Stack Web Developer with expertise in React JS, Next JS, Node
+            JS, Laravel, and Tailwind CSS. Skilled in building responsive,
+            scalable, and user-friendly web applications, developing and
+            integrating RESTful APIs, and optimizing performance.
           </p>
 
           <div className="flex gap-4">
             <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium hover:scale-105 transition-transform flex items-center gap-2 cursor-pointer">
               <FileText className="w-5 h-5" /> Download CV
             </button>
-            <button 
+            <button
               onClick={() => handleScrollToPortfolio(0)}
               className="px-6 py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium hover:bg-[#a855f7]/10 transition-all flex items-center gap-2 cursor-pointer"
             >

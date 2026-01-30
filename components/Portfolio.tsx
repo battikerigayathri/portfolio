@@ -192,21 +192,20 @@ const Portfolio = () => {
 
     // Initialize AOS
 
-
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
     const handleSwitchTab = (event: CustomEvent) => {
       const tabIndex = event.detail;
-      if (typeof tabIndex === 'number' && tabIndex >= 0 && tabIndex <= 2) {
+      if (typeof tabIndex === "number" && tabIndex >= 0 && tabIndex <= 2) {
         setActiveTab(tabIndex);
       }
     };
 
-    window.addEventListener('switchTab' as any, handleSwitchTab as any);
+    window.addEventListener("switchTab" as any, handleSwitchTab as any);
     return () => {
-      window.removeEventListener('switchTab' as any, handleSwitchTab as any);
+      window.removeEventListener("switchTab" as any, handleSwitchTab as any);
     };
   }, []);
 
@@ -232,7 +231,7 @@ const Portfolio = () => {
   return (
     <div
       className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] overflow-hidden pb-10"
-      id="Portfolio"
+      id="portfolio"
     >
       {/* Header Section */}
       <div
@@ -308,7 +307,7 @@ const Portfolio = () => {
                   backdropFilter: "blur(10px)",
                   borderRadius: "12px",
                   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)"
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
                 },
                 "& svg": {
                   width: 20,
@@ -317,10 +316,10 @@ const Portfolio = () => {
                   transition: "all 0.3s ease",
                 },
                 "&.Mui-selected svg": {
-                   transform: "scale(1.1)",
+                  transform: "scale(1.1)",
                 },
                 "&:hover": {
-                   color: "#fff",
+                  color: "#fff",
                 },
               }}
             />
@@ -416,7 +415,9 @@ const Portfolio = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className={`transition-transform duration-300 ${
-                        showAllProjects ? "rotate-180" : "group-hover:translate-y-0.5"
+                        showAllProjects
+                          ? "rotate-180"
+                          : "group-hover:translate-y-0.5"
                       }`}
                     >
                       <polyline points="6 9 12 15 18 9"></polyline>
@@ -552,7 +553,11 @@ const Portfolio = () => {
                   <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-50 blur transition duration-300"></div>
                     <div className="relative h-16 w-16 md:h-20 md:w-20">
-                      <StackIcon name={tech.stackIconName} className="w-full h-full" variant="dark" />
+                      <StackIcon
+                        name={tech.stackIconName}
+                        className="w-full h-full"
+                        variant="dark"
+                      />
                     </div>
                   </div>
                   <span className="text-slate-300 font-semibold text-sm md:text-base tracking-wide group-hover:text-white transition-colors duration-300">

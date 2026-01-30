@@ -3,26 +3,33 @@
 import React from "react";
 import TextType from "./TextType";
 import { SquareArrowOutUpRight } from "lucide-react";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const tech = ["React JS", "Next JS", "Node JS", "Laravel"];
 
 const Home = () => {
-    
   const handleScrollToPortfolio = (tabIndex: number) => {
-    document.getElementById('Portfolio')?.scrollIntoView({ behavior: 'smooth' });
-    window.dispatchEvent(new CustomEvent('switchTab', { detail: tabIndex }));
+    document
+      .getElementById("portfolio")
+      ?.scrollIntoView({ behavior: "smooth" });
+    window.dispatchEvent(new CustomEvent("switchTab", { detail: tabIndex }));
   };
 
   return (
-    <div className="flex justify-between items-center pt-30 px-[5%] sm:px-[5%] lg:px-[10%]">
+    <div
+      className="flex justify-between items-center pt-30 px-[5%] sm:px-[5%] lg:px-[10%]"
+      id="home"
+    >
       <div
         className="pb-4 max-w-4xl  space-y-5"
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        <div className="inline-block pt-4 animate-float lg:mx-0 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="400">
+        <div
+          className="inline-block pt-4 animate-float lg:mx-0 aos-init aos-animate"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
             <div className="relative px-3 sm:px-4 py-2 rounded-full bg-black/40 backdrop-blur-xl border border-white/10">
@@ -106,33 +113,36 @@ const Home = () => {
           data-aos="fade-up"
           data-aos-delay="1400"
         >
-            <button onClick={() => handleScrollToPortfolio(0)} className="group relative w-[140px] xs:w-[160px] cursor-pointer">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
-              <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
-                <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-[#4f52c9]/20 to-[#8644c5]/20"></div>
-                <span className="absolute inset-0 flex items-center justify-center gap-2 text-sm group-hover:gap-3 transition-all duration-300">
-                  <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
-                    Projects
-                  </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-external-link w-4 h-4 text-gray-200 group-hover:rotate-45 transform transition-all duration-300 z-10"
-                  >
-                    <path d="M15 3h6v6"></path>
-                    <path d="M10 14 21 3"></path>
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  </svg>
+          <button
+            onClick={() => handleScrollToPortfolio(0)}
+            className="group relative w-[140px] xs:w-[160px] cursor-pointer"
+          >
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
+            <div className="relative h-11 bg-[#030014] backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
+              <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-[#4f52c9]/20 to-[#8644c5]/20"></div>
+              <span className="absolute inset-0 flex items-center justify-center gap-2 text-sm group-hover:gap-3 transition-all duration-300">
+                <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
+                  Projects
                 </span>
-              </div>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-external-link w-4 h-4 text-gray-200 group-hover:rotate-45 transform transition-all duration-300 z-10"
+                >
+                  <path d="M15 3h6v6"></path>
+                  <path d="M10 14 21 3"></path>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+              </span>
+            </div>
+          </button>
           <a href="#Contact">
             <button className="group relative w-[140px] xs:w-[160px]">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[#4f52c9] to-[#8644c5] rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
@@ -251,13 +261,13 @@ const Home = () => {
       </div>
       <div>
         <DotLottieReact
-      src="https://lottie.host/ac01e761-ef62-46d2-998f-fb95db74bc6e/Hhr1tZPnSC.lottie"
-      loop
-      autoplay
-      height={800}
-      width={800}
-      className=""
-    />
+          src="https://lottie.host/ac01e761-ef62-46d2-998f-fb95db74bc6e/Hhr1tZPnSC.lottie"
+          loop
+          autoplay
+          height={800}
+          width={800}
+          className=""
+        />
       </div>
     </div>
   );
