@@ -60,37 +60,30 @@ const techStack: Tech[] = [
   { name: "React JS", stackIconName: "react" },
   { name: "Next JS", stackIconName: "nextjs" },
   { name: "Node JS", stackIconName: "nodejs" },
-  { name: "Laravel", stackIconName: "laravel" },
-  { name: "Vite", stackIconName: "vitejs" },
   { name: "MySQL", stackIconName: "mysql" },
   { name: "Firebase", stackIconName: "firebase" },
   { name: "MongoDB", stackIconName: "mongodb" },
   { name: "Postman", stackIconName: "postman" },
   { name: "GitHub", stackIconName: "github" },
   { name: "Vercel", stackIconName: "vercel" },
-  { name: "Material UI", stackIconName: "materialui" },
-  { name: "Motion", stackIconName: "framer" },
-  { name: "Figma", stackIconName: "figma" },
-  { name: "Linux", stackIconName: "linux" },
-  { name: "Ubuntu", stackIconName: "ubuntu" },
 ];
 
 // --- Data ---
 const projects: Project[] = [
   {
     id: 1,
-    title: "Tool Matrix (FYP)",
-    desc: "A web-based platform developed in React JS, Node JS, Python and Tailwind CSS featuring calculators for various domains. Integrated a Python-powered AI model utilizing Gemini API to solve handwritten math problems. Achieved 95% accuracy in solving math queries through the AI-powered handwriting recognition feature.",
-    img: "/tool matrix dark.png",
-    liveLink: "https://tool-matrix.vercel.app/",
-    detailsLink: "/project/tool-matrix",
+    title: "Open Source Contributor | Mercury-js (@mercury-js/core) A powerful Node.js framework for rapid API development with GraphQL & Mongoose.",
+    desc: "Contributed to the core framework architecture; specialized in automating GraphQL resolver generation and implementing granular security middleware for Mongoose-based APIs.",
+    img: "Mercury.png",
+    liveLink: "https://mercuryjs.dev/",
+    detailsLink: "https://www.npmjs.com/package/@mercury-js/core?activeTab=readme",
   },
   {
     id: 2,
     title: "Snow Dream Studios",
     desc: "Snow Dream Studios is a Swiss-based digital studio blending cutting-edge tech with stunning design. Built with Next.js, Tailwind CSS, Framer Motion, and JavaScript, and hosted on Vercel, it delivers a visually rich, interactive experience. The platform features smooth animations, a modern design, and a comprehensive portfolio.",
     img: "/snowdreamstudios.ch_en_.png",
-    liveLink: "https://snowdreamstudios.com/",
+    liveLink: "https://play.google.com/store/apps/details?id=com.abhinavbharath&pcampaignid=web_share",
     detailsLink: "/project/snowdreamstudios",
   },
   {
@@ -192,20 +185,21 @@ const Portfolio = () => {
 
     // Initialize AOS
 
+
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
     const handleSwitchTab = (event: CustomEvent) => {
       const tabIndex = event.detail;
-      if (typeof tabIndex === "number" && tabIndex >= 0 && tabIndex <= 2) {
+      if (typeof tabIndex === 'number' && tabIndex >= 0 && tabIndex <= 2) {
         setActiveTab(tabIndex);
       }
     };
 
-    window.addEventListener("switchTab" as any, handleSwitchTab as any);
+    window.addEventListener('switchTab' as any, handleSwitchTab as any);
     return () => {
-      window.removeEventListener("switchTab" as any, handleSwitchTab as any);
+      window.removeEventListener('switchTab' as any, handleSwitchTab as any);
     };
   }, []);
 
@@ -231,7 +225,7 @@ const Portfolio = () => {
   return (
     <div
       className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] overflow-hidden pb-10"
-      id="portfolio"
+      id="Portfolio"
     >
       {/* Header Section */}
       <div
@@ -307,7 +301,7 @@ const Portfolio = () => {
                   backdropFilter: "blur(10px)",
                   borderRadius: "12px",
                   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)"
                 },
                 "& svg": {
                   width: 20,
@@ -316,10 +310,10 @@ const Portfolio = () => {
                   transition: "all 0.3s ease",
                 },
                 "&.Mui-selected svg": {
-                  transform: "scale(1.1)",
+                   transform: "scale(1.1)",
                 },
                 "&:hover": {
-                  color: "#fff",
+                   color: "#fff",
                 },
               }}
             />
@@ -415,9 +409,7 @@ const Portfolio = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className={`transition-transform duration-300 ${
-                        showAllProjects
-                          ? "rotate-180"
-                          : "group-hover:translate-y-0.5"
+                        showAllProjects ? "rotate-180" : "group-hover:translate-y-0.5"
                       }`}
                     >
                       <polyline points="6 9 12 15 18 9"></polyline>
@@ -553,11 +545,7 @@ const Portfolio = () => {
                   <div className="relative">
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-50 blur transition duration-300"></div>
                     <div className="relative h-16 w-16 md:h-20 md:w-20">
-                      <StackIcon
-                        name={tech.stackIconName}
-                        className="w-full h-full"
-                        variant="dark"
-                      />
+                      <StackIcon name={tech.stackIconName} className="w-full h-full" variant="dark" />
                     </div>
                   </div>
                   <span className="text-slate-300 font-semibold text-sm md:text-base tracking-wide group-hover:text-white transition-colors duration-300">
